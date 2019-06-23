@@ -1,0 +1,29 @@
+{
+  "image":[
+    {"name":"bg_day","src":"./image/flappybird/bg_day.png"},
+    {"name":"bg_night","src":"./image/flappybird/bg_night.png"},
+    {"name":"land","src":"./image/flappybird/land.png"},
+    {"name":"pipe1_down","src":"./image/flappybird/pipe1_down.png"},
+    {"name":"pipe2_down","src":"./image/flappybird/pipe2_down.png"},
+    {"name":"pipe1_up","src":"./image/flappybird/pipe1_up.png"},
+    {"name":"pipe2_up","src":"./image/flappybird/pipe2_up.png"},
+
+    {"name":"bird0_0","src":"./image/flappybird/bird0_0.png"},
+    {"name":"bird0_1","src":"./image/flappybird/bird0_1.png"},
+    {"name":"bird0_2","src":"./image/flappybird/bird0_2.png"},
+
+    {"name":"bird1_0","src":"./image/flappybird/bird1_0.png"},
+    {"name":"bird1_1","src":"./image/flappybird/bird1_1.png"},
+    {"name":"bird1_2","src":"./image/flappybird/bird1_2.png"},
+
+
+
+    {"name":"bird2_0","src":"./image/flappybird/bird2_0.png"},
+    {"name":"bird2_1","src":"./image/flappybird/bird2_1.png"},
+    {"name":"bird2_2","src":"./image/flappybird/bird2_2.png"}
+
+
+
+  ]
+}
+

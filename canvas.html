@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+  <canvas id="canvas">  </canvas>
+  <script>
+      var canvas=document.getElementById('canvas')
+        canvas.width=document.documentElement.clientWidth;
+        canvas.height=document.documentElement.clientHeight;
+
+       var ctx=canvas.getContext('2d')
+       var R_obj={}
+       var ajax= new XMLHttpRequest();
+           ajax.open('get','./R.js',true);
+           ajax.send(null);
+           ajax.onreadystatechange=function () {
+               if(ajax.readyState==4){
+                   if(ajax.status==200){
+                       console.log(ajax.responseText);
+                        var r_img=JSON.parse(ajax.responseText)
+                        r_img.image.forEach(function (obj,index) {
+                            R_obj[obj.name]=new Image();
+                            R_obj[obj.name].src=obj.url;
+                            R_obj[obj.name].onload=function(){
+                                ctx.clearRect(0,0,canvas.width,canvas.height)
+                                ctx.textAlign='center'
+                                var str=` 正在加载第${index+1}\/${r_img.image.length}个资源`
+                                ctx.fillText(str,canvas.width/2,20)
+                                if(index+1==r_img.image.length){
+
+                                     start()
+                                }
+                            }
+
+                            })
+
+                   }
+               }
+           }
+        var num=0;
+        function start() {
+
+            setInterval(function () {
+                ctx.clearRect(0,0,canvas.width,canvas.height)
+                num++;
+                ctx.font=' 16px 宋体'
+                ctx.fillStyle='red'
+                var pin=`ping-${num}`
+                ctx.fillText(pin,80,20  )
+
+                ctx.drawImage(R_obj.blrid,0,0,400,400,0,50,400,400)
+                ctx.drawImage(R_obj.jinling1,100,0,600,800,400,50,400,400)
+
+            },30)
+        }
+
+  </script>
+</body>
+</html>

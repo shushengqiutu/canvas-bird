@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding:0;
+    }
+    body{
+        overflow: hidden;
+    }
+    #canvas{
+        border: 1px solid red;
+    }
+</style>
+<body>
+     <canvas id="canvas"></canvas>
+     <script src="./js/game.js"></script>
+     <script src="./js/background.js"></script>
+     <script src="./js/land.js"> </script>
+     <script src="./js/pipe.js"> </script>
+     <script src="./js/bird.js"> </script>
+
+     <script>
+           var req_Obj={
+               id:'canvas',
+               R_url:'./js/R_Image.json'
+           }
+           var game=new  Game(req_Obj)
+           game.canvas.onclick=function () {
+               game.bird.isFly()
+           }
+
+     </script>
+</body>
+</html>
